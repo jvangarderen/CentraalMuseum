@@ -11,6 +11,7 @@ public class Move2D3D : MonoBehaviour {
 	public Axis axis;
 	public bool Active3DView = true;
 	private bool moveObj = false;
+    private bool fadeFrame = true;
 	private float targetPos;
 	public float switchtime = 5;
 	private List<GameObject> ObjToMoveList;
@@ -21,30 +22,57 @@ public class Move2D3D : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        MakeFrameInvisable();
 		
 	}
+
+    void MakeFrameInvisable()
+    {
+        foreach (Transform child in SceneFrame.transform)
+        {
+            MeshRenderer mr = child.GetComponent<MeshRenderer>();
+            Color c = mr.material.color;
+            c.a = 0;
+            mr.material.color = c;
+        }
+    }
 	
 	// Update is called once per frame
 	void Update ()
 	{
 		if(Input.GetKeyDown(KeyCode.Space)) 
 		{
-			Debug.Log("clicked space");
 			switch2D3D();
 		}
+        if(!fadeFrame)
+        {
+            foreach (Transform child in SceneFrame.transform)
+            {
+                MeshRenderer mr = child.GetComponent<MeshRenderer>();
+                Color c = mr.material.color;
+                c.a += (1 / switchtime) * Time.deltaTime;
+                mr.material.color = c;
+            }
+        }
 	}
 
 	void switch2D3D()
 	{
 		if (Active3DView)
 		{
-			//Active3DView = false;
+			Active3DView = false;
 			GetTargetPos();
 		} 
 		else 
 		{
-			//Active3DView = true;
-		}
+            GetObjectToMove();
+            foreach (GameObject obj in ObjToMoveList)
+            {
+                LayerMoveAbleOBJ LMAO = obj.GetComponent<LayerMoveAbleOBJ>();
+                LMAO.MoveToOriginalPosition(axis.ToString());
+            }
+            Active3DView = true;
+        }
 	}
 
 	void GetTargetPos()
@@ -52,8 +80,7 @@ public class Move2D3D : MonoBehaviour {
 		//AtillaTest(Axis.x);
 		//AtillaTest(Axis.y);
 		//AtillaTest(Axis.z);
-
-		Debug.Log("start gettargetpos");
+        
 		if (axis == Axis.x && mergeLayerDirection == MergeLayerDirection.back) { targetPos = LayerAmount[LayerAmount.Count - 1].objLayer[0].transform.position.x; }
 		if (axis == Axis.y && mergeLayerDirection == MergeLayerDirection.back) { targetPos = LayerAmount[LayerAmount.Count - 1].objLayer[0].transform.position.y; }
 		if (axis == Axis.z && mergeLayerDirection == MergeLayerDirection.back) { targetPos = LayerAmount[LayerAmount.Count - 1].objLayer[0].transform.position.z; }
@@ -78,7 +105,6 @@ public class Move2D3D : MonoBehaviour {
 
 	void GetObjectToMove()
 	{
-		Debug.Log("start GetObjectToMove");
 		ObjToMoveList = new List<GameObject>();
 		switch (mergeLayerDirection) {
 			case MergeLayerDirection.front:
@@ -114,12 +140,11 @@ public class Move2D3D : MonoBehaviour {
 
 	private void SetObjTargetPos()
 	{
-		Debug.Log("start SetObjTargetPos");
 		foreach (GameObject obj in ObjToMoveList) {
 			LayerMoveAbleOBJ LMAO = obj.GetComponent<LayerMoveAbleOBJ>();
 			LMAO.SetTargetLocation(axis.ToString(), targetPos);
 		}
-		Debug.Log("end SetObjTargetPos");
+        fadeFrame = false;
 	}
 }
 
