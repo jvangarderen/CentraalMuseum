@@ -18,6 +18,11 @@ public class MainMenu : MonoBehaviour
 		
 	}
 
+	public void StartApp()
+	{
+		Application.LoadLevel(1);
+	}
+
     private IEnumerator WaitAndPrint(float waitTime)
     {
         while (true)

@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/gps_digitalfootprint.unity
-    guid: a6bd73e3878bcd2439594136752f2883
+    path: Assets/Scenes/menu.unity
+    guid: cc4b9ff7f05228849a26eb9dedd809d7
+  - enabled: 1
+    path: Assets/Scenes/main.unity
+    guid: a4ba916f2807f7948b86d88e859e307b
   m_configObjects: {}
