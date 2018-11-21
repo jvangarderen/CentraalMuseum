@@ -848,7 +848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enableTeleport: 1
   targetListPolicy: {fileID: 0}
-  defaultCursorObject: {fileID: 0}
+  defaultCursorObject: {fileID: 1046034768}
   hoverCursorObject: {fileID: 0}
   lockedCursorObject: {fileID: 0}
   destinationLocation: {fileID: 0}
@@ -1640,7 +1640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enableTeleport: 1
   targetListPolicy: {fileID: 0}
-  defaultCursorObject: {fileID: 0}
+  defaultCursorObject: {fileID: 1046034768}
   hoverCursorObject: {fileID: 0}
   lockedCursorObject: {fileID: 0}
   destinationLocation: {fileID: 0}
@@ -1763,6 +1763,10 @@ Prefab:
         type: 2}
       propertyPath: includeHeadsetOffset
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010029692868, guid: fae4d3c6bce5d264f966e5a4fb54fa3a, type: 2}
+      propertyPath: m_Name
+      value: PointerDirectionIndicatorR
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fae4d3c6bce5d264f966e5a4fb54fa3a, type: 2}
@@ -2419,7 +2423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enableTeleport: 1
   targetListPolicy: {fileID: 0}
-  defaultCursorObject: {fileID: 0}
+  defaultCursorObject: {fileID: 1046034768}
   hoverCursorObject: {fileID: 0}
   lockedCursorObject: {fileID: 0}
   destinationLocation: {fileID: 0}
@@ -4805,6 +4809,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1767685363245104, guid: 59df6cfef44777a46a37ffb8b42a1771,
     type: 2}
   m_PrefabInternal: {fileID: 233622881}
+--- !u!1 &1046034768 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1764245928179372, guid: fae4d3c6bce5d264f966e5a4fb54fa3a,
+    type: 2}
+  m_PrefabInternal: {fileID: 359996833}
 --- !u!1 &1102272238
 GameObject:
   m_ObjectHideFlags: 0
@@ -5155,7 +5164,7 @@ Prefab:
         type: 2}
       propertyPath: directionIndicator
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1655027344}
     m_RemovedComponents:
     - {fileID: 114396278116079016, guid: be9b022c9472a3b42a4372bdacd7e02a, type: 2}
     - {fileID: 114481750897129870, guid: be9b022c9472a3b42a4372bdacd7e02a, type: 2}
@@ -6503,6 +6512,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1087649750491156, guid: 59df6cfef44777a46a37ffb8b42a1771,
     type: 2}
   m_PrefabInternal: {fileID: 233622881}
+--- !u!114 &1655027344 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114000013321266418, guid: fae4d3c6bce5d264f966e5a4fb54fa3a,
+    type: 2}
+  m_PrefabInternal: {fileID: 359996833}
+  m_Script: {fileID: 11500000, guid: ab83c671fdbadc64099c66949ea544fb, type: 3}
 --- !u!1 &1666532643
 GameObject:
   m_ObjectHideFlags: 0

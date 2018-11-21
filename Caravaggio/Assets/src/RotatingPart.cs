@@ -32,13 +32,14 @@ public class RotatingPart : MonoBehaviour {
 			case Axis.z: rot = new Vector3(transform.rotation.x, transform.rotation.y, transform.rotation.z + rotationValue); break;
 		}
 		Quaternion rotation = Quaternion.Euler(rot);
-		//transform.rotation = Quaternion.Lerp(transform.rotation,rotation, Time.deltaTime);
-
-
-
 		//example
 		// calculate rotation speed
 		float rotationSpeed = rotationValue / timeToFinishRotation;
+		transform.rotation = Quaternion.Lerp(transform.rotation,rotation, Time.deltaTime);
+
+
+
+
 	}
 
 	public void startFolding()
