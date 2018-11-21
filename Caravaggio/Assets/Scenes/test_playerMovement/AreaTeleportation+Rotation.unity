@@ -1321,12 +1321,6 @@ MonoBehaviour:
   startMenuAlias: 102
   touchModifier: 116
   hairTouchModifier: 104
---- !u!114 &287641555 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114000013321266418, guid: fae4d3c6bce5d264f966e5a4fb54fa3a,
-    type: 2}
-  m_PrefabInternal: {fileID: 359996833}
-  m_Script: {fileID: 11500000, guid: ab83c671fdbadc64099c66949ea544fb, type: 3}
 --- !u!1 &287676115
 GameObject:
   m_ObjectHideFlags: 0
@@ -5156,12 +5150,12 @@ Prefab:
         type: 2}
       propertyPath: directionIndicator
       value: 
-      objectReference: {fileID: 287641555}
+      objectReference: {fileID: 0}
     - target: {fileID: 114595259210289692, guid: be9b022c9472a3b42a4372bdacd7e02a,
         type: 2}
       propertyPath: directionIndicator
       value: 
-      objectReference: {fileID: 287641555}
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114396278116079016, guid: be9b022c9472a3b42a4372bdacd7e02a, type: 2}
     - {fileID: 114481750897129870, guid: be9b022c9472a3b42a4372bdacd7e02a, type: 2}
