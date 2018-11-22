@@ -19,7 +19,7 @@ public class VolumeSlider : MonoBehaviour {
 
 	public void OnSliderChanged(float value)
 	{
-		Debug.Log(value);
+		//Debug.Log(value);
 		volumeSlider.value = Mathf.Round(value * 10) / 10;
 	}
 }

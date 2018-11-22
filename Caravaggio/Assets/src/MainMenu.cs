@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class MainMenu : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class MainMenu : MonoBehaviour
     private IEnumerator coroutine;
 	public GameObject mainMenu;
 	public GameObject settingMenu;
+
+	public AudioMixer masterMixer;
     // Use this for initialization
     void Start () {
         //coroutine = WaitAndPrint(menuTimeVisable);
@@ -17,6 +20,11 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     void Update () {
 		
+	}
+
+	public void SetMasterVolume(float mastervolume)
+	{
+		masterMixer.SetFloat("MusicVolume",mastervolume);
 	}
 
 	public void StartApp()
