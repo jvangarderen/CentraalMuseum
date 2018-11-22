@@ -6,7 +6,8 @@ public class MainMenu : MonoBehaviour
 {
     public float menuTimeVisable;
     private IEnumerator coroutine;
-
+	public GameObject mainMenu;
+	public GameObject settingMenu;
     // Use this for initialization
     void Start () {
         //coroutine = WaitAndPrint(menuTimeVisable);
@@ -21,6 +22,18 @@ public class MainMenu : MonoBehaviour
 	public void StartApp()
 	{
 		Application.LoadLevel(1);
+	}
+
+	public void OpenSettings()
+	{
+		mainMenu.SetActive(false);
+		settingMenu.SetActive(true);
+	}
+
+	public void CloseSettings()
+	{
+		mainMenu.SetActive(true);
+		settingMenu.SetActive(false);
 	}
 
     private IEnumerator WaitAndPrint(float waitTime)
